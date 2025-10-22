@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- SEO: Title & description -->  <title>Accessible HTML5 Example — PLP Assignment</title>
+  <meta name="description" content="A simple, semantic HTML5 page demonstrating accessibility best practices and beginner-friendly SEO techniques for a PLP web development assignment.">
+  <link rel="canonical" href="https://example.com/plp-accessible-html5">
+  <meta name="robots" content="index, follow">  <!-- Open Graph (helps social previews/search) -->  <meta property="og:title" content="Accessible HTML5 Example — PLP Assignment">
+  <meta property="og:description" content="A semantic HTML5 page showing accessibility and SEO basics: landmarks, proper heading order, ARIA usage, descriptive alt text and metadata.">
+  <meta property="og:type" content="website">  <!-- Helpful note for graders: this assignment uses only HTML5, no CSS/JS required --></head>
+<body>
+  <!-- Skip link improves keyboard & screen reader navigation -->
+  <a href="#main" class="skip-link">Skip to main content</a>  <!-- Header landmark: site identity and primary navigation -->  <header role="banner" aria-label="Site header">
+    <h1>PLP: HTML5, Accessibility &amp; SEO</h1>
+    <p class="tagline">A minimal semantic page demonstrating best practices for structure, accessibility and basic SEO.</p><!-- Navigation: use semantic nav and an accessible list of links -->
+<nav role="navigation" aria-label="Primary navigation">
+  <ul>
+    <li><a href="#about" aria-current="false">About</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  </header>  <!-- Main landmark: the core page content -->  <main id="main" role="main"><!-- Article with an introductory section -->
+<article aria-labelledby="intro-heading">
+  <header>
+    <h2 id="intro-heading">Assignment Overview</h2>
+    <p>This page is built using semantic HTML5 elements and focuses on clear hierarchy, screen-reader friendliness, and SEO-ready content.</p>
+  </header>
+
+  <!-- Use sections with descriptive headings (h3 follows the page h2) -->
+  <section id="about" aria-labelledby="about-heading">
+    <h3 id="about-heading">About This Example</h3>
+    <p>Key goals for this assignment:</p>
+    <ul>
+      <li>Use meaningful semantic elements (header, nav, main, article, section, footer).</li>
+      <li>Follow a logical heading order (H1 &gt; H2 &gt; H3) to support screen readers and SEO.</li>
+      <li>Provide descriptive metadata and alt text so both humans and crawlers understand the content.</li>
+    </ul>
+  </section>
+
+  <section id="examples" aria-labelledby="examples-heading">
+    <h3 id="examples-heading">Accessibility &amp; SEO Examples</h3>
+
+    <!-- Example: image with descriptive alt text wrapped in figure/figcaption -->
+    <figure>
+      <!-- Use an illustrative image; alt describes purpose for screen reader users -->
+      <img src="https://via.placeholder.com/640x360.png?text=Semantic+HTML5" alt="Illustration showing semantic HTML5 block elements like header, nav, main, footer">
+      <figcaption>Figure: Visual metaphor for semantic HTML5 layout.</figcaption>
+    </figure>
+
+    <!-- A short, crawlable content block with a sub-heading -->
+    <section aria-labelledby="seo-tip-heading">
+      <h4 id="seo-tip-heading">On-Page SEO Basics</h4>
+      <p>Search engines look for clear structure and meaningful content. Use a descriptive title, meta description, and headings that reflect the topic of each section. Avoid heading skipping (don't jump from H1 to H4 without intermediate levels) and provide textual content that answers user intent.</p>
+    </section>
+
+    <section aria-labelledby="accessibility-tip-heading">
+      <h4 id="accessibility-tip-heading">Accessibility Enhancements</h4>
+      <p>Provide keyboard support (skip links), meaningful link text (avoid "click here"), alt text for images, and explicit form labels. Use landmark elements and ARIA attributes only when native semantics are insufficient.</p>
+    </section>
+  </section>
+
+  <!-- Semantic aside for complementary content (not primary) -->
+  <aside aria-labelledby="aside-heading">
+    <h3 id="aside-heading">Quick checklist</h3>
+    <ul>
+      <li>Document language: <code>lang</code> set on &lt;html&gt;.</li>
+      <li>Skip link present for keyboard users.</li>
+      <li>Logical heading order and descriptive headings.</li>
+      <li>Descriptive meta description for crawlers.</li>
+      <li>Accessible form controls with labels.</li>
+    </ul>
+  </aside>
+
+  <!-- Contact form: accessible elements with labels and proper input types -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <h3 id="contact-heading">Contact / Feedback</h3>
+    <p>If this were a production site you could reach the author using the form below. Labels are associated with form controls, and required fields are indicated.</p>
+
+    <form action="#" method="post" aria-describedby="contact-desc">
+      <p id="contact-desc">This sample form demonstrates accessible labels, placeholders and required attributes (no JavaScript or server required for the assignment).</p>
+
+      <div>
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true">
+      </div>
+
+      <div>
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required aria-required="true">
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="How can we help?" required aria-required="true"></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Send message</button>
+      </div>
+    </form>
+  </section>
+
+</article>
+
+<!-- Resource list for further reading (semantic use of section + list) -->
+<section id="resources" aria-labelledby="resources-heading">
+  <h2 id="resources-heading">Resources</h2>
+  <ul>
+    <li><a href="https://developer.mozilla.org/" rel="noopener">MDN Web Docs — HTML</a></li>
+    <li><a href="https://webaim.org/" rel="noopener">WebAIM — Accessibility guidance</a></li>
+    <li><a href="https://developers.google.com/search/docs" rel="noopener">Google Search Central — SEO basics</a></li>
+  </ul>
+</section>
+
+  </main>  <!-- Footer landmark with contact info and legal info -->  <footer role="contentinfo" aria-label="Site footer">
+    <section aria-labelledby="footer-heading">
+      <h2 id="footer-heading">Contact &amp; Attribution</h2>
+      <address>
+        PLP Web Dev — Example author<br>
+        Email: <a href="mailto:author@example.com">author@example.com</a>
+      </address>
+      <p>&copy; 2025 PLP Assignment. All content provided as sample educational material.</p>
+    </section><nav aria-label="Footer navigation">
+  <ul>
+    <li><a href="#main">Back to content</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
+
+  </footer>  <!-- End of document: no CSS or JavaScript required for this assignment --></body>
+</html>
